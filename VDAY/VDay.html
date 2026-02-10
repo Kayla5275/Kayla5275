@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="CSS/valentine.css" />
+  </head>
+  <body>
+    <div id="valentineQuestion"><b>WILL YOU BE MY VALENTINE?</b></div>
+    <img src="Photos/please.JPG" alt="Kayla and Zeek" class="rotate-90" />
+    <br />
+    <br />
+    <br />
+    <button class="answerButton" onclick="location.href='thankyou.html'">
+      Yes baby
+    </button>
+    <button class="answerButton" id="noButton">Nope I hate you</button>
+
+    <script>
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          var yesButton = document.querySelector(
+            'button[onclick*="thankyou.html"]'
+          );
+          var currentFontSize = parseInt(
+            window.getComputedStyle(yesButton).fontSize
+          );
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+        });
+    </script>
+  </body>
+</html>
